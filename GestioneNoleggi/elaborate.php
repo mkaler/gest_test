@@ -40,7 +40,7 @@
         }
     }
 
-    function connect_db($server = 'localhost', $user = 'root', $password = 'mkaler1997', $db = 'test')
+    function connect_db($server = '192.168.1.11', $user = 'root', $password = 'mkaler1997', $db = 'test')
     {
         $conn = new mysqli($server, $user, $password, $db);
         if($conn->connect_error)
