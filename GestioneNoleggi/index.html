@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>gestione noleggi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+
+    <div id=nav_bar_element class="row">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Gestione Noleggi</a>
+                </div>
+                    <ul class="nav navbar-nav">
+                    <li><a id="auto_disponibili" href="#dynamic_div"data-toggle="tab" >Auto disponibili</a></li>
+                    <li><a id="lista_noleggi" href="#dynamic_div" data-toggle="tab">Noleggi</a></li>
+                    <li><a id="fill_noleggio_form" href="#form_noleggio_tab" data-toggle="tab">Effettua Noleggio</a></li>
+                    <li><a id="fill_restituisci_form" href="#form_restituisci_tab" data-toggle="tab">Restituisci Auto</a></li>
+                    </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Gestire i noleggi</h1>
+                <p>Lorem ipsium</p> 
+            </div>
+            <div class="row tab-content">
+                <div id = "dynamic_div" class="tab-pane fade">
+
+                </div>
+                    <div class = "col-sm-2"></div>
+                    <div id="form_noleggio_tab" class="tab-pane fade">
+                        <form id="noleggio_form" class="form-horizontal" onsubmit="return submit_noleggio(this);">
+                            <fieldset>
+                            <legend>Form</legend>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label text-right">Targa</label>
+                                <div class="col-sm-6">
+                                    <select class="form-control" name="targa" id="select_targa" required>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label text-right">Codice Fiscale</label>
+                                <div class="col-sm-6">
+                                    <select class="form-control" name="cf" id="select_cf" required>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="inizio">Data Inizio</label>
+                                <div class="col-sm-6">
+                                    <input type="date" class="form-control" id="inizio" name="inizio" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="fine">Data Fine</label>
+                                <div class="col-sm-6">
+                                    <input type="date" class="form-control" id="fine" name="fine" required>
+                                </div>
+                            </div>
+                            <div class="form-group">        
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                    <button id ="reset_noleggio" type="reset" class="btn btn-default">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Invia</button>
+                                    </div>
+                                </div>
+                            <br>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div id="form_restituisci_tab" class="tab-pane fade">
+                        <form class="form-horizontal" id="restituisci_form" onsubmit="return restituisci_submit(this);">
+                                <fieldset>
+                                    <legend>Form</legend>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label text-right">Targa</label>
+                                    <div class="col-sm-6">
+                                        <select id="select_targa_rest"class="form-control" name="targa">
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">        
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Invia</button>
+                                        <button id = "reset_restituisci"type="reset" class="btn btn-default">Reset</button>
+                                    </div>
+                                </div>
+                                <br>
+                                </fieldset>
+                        </form>
+                    </div>
+                </div>
+        </div>
+</body>
+</html>
